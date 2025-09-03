@@ -31,7 +31,7 @@ const PostForm = ({ onNewComment }) => {
       onNewComment(newComment);
     }
 
-    const token = "8432443962:AAEAOJ886p6As35xrfLMV7CYuGX254zNaJI";
+    const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
     // const chat_id = "-1002523939469";  !!!!! BU YERNI O‘ZGARTIRMA !!!!!
     const my_text = `📞 Telefon raqami: +${phone}\n📝 Fikr: ${content}`;
 
