@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './oder_user.scss';
 import AllOrdersUser from './allOrdersUser/AllOrdersUser';
-import UnpaidOrdersUser from '../UnpaidOrdersUser/UnpaidOrdersUser';
+import UnpaidOrdersUser from './unpaidOrdersUserFile/UnpaidOrdersUser';
 import ActiveOrdersUser from './activeOrdersUser/ActiveOrdersUser';
 
 const O_User = () => {
