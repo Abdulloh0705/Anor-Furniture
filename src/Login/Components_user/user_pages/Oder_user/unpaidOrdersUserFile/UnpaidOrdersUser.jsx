@@ -28,7 +28,12 @@ const UnpaidOrdersUser = () => {
                     ) : (
                         <div className="unpaid-orders__products">
                             {items.map(item => (
-                                <div key={item.id} className="unpaid-orders__product-box order-user__window-box" onClick={() => navigate(`/product/${item.id}`)} style={{ cursor: "pointer" }}>
+                                <div
+                                    key={item.id}
+                                    className="unpaid-orders__product-box order-user__window-box"
+                                    onClick={() => navigate(`/product/${item.id}`)}
+                                    style={{ cursor: "pointer" }}
+                                >
                                     <div className="unpaid-orders__product-essay__box">
                                         <h2 className="unpaid-orders__product-title">{item.title}</h2>
                                     </div>
