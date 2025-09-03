@@ -35,7 +35,7 @@ const PostForm = ({ onNewComment }) => {
     // const chat_id = "-1002523939469";  !!!!! BU YERNI O‘ZGARTIRMA !!!!!
     const my_text = `📞 Telefon raqami: +${phone}\n📝 Fikr: ${content}`;
 
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
     try {
       const res = await fetch(url, {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './oder_user.scss';
 import AllOrdersUser from './allOrdersUser/AllOrdersUser';
-import UnpaidOrdersUser from './UnpaidOrdersUser/UnpaidOrdersUser';
+import UnpaidOrdersUser from '../UnpaidOrdersUser/UnpaidOrdersUser';
 import ActiveOrdersUser from './activeOrdersUser/ActiveOrdersUser';
 
 const O_User = () => {
@@ -10,12 +10,12 @@ const O_User = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "all":
-        return <AllOrdersUser />
+        return <AllOrdersUser />;
       case "unpaid":
-        return <UnpaidOrdersUser />
+        return <UnpaidOrdersUser />;
       case "active":
-        return <ActiveOrdersUser />
-      default:    
+        return <ActiveOrdersUser />;
+      default:
         return null;
     }
   };
