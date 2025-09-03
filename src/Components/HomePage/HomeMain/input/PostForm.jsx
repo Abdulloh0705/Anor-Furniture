@@ -31,12 +31,12 @@ const PostForm = ({ onNewComment }) => {
       onNewComment(newComment);
     }
 
-    const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-    // const chat_id = "-1002523939469";  !!!!! BU YERNI O‘ZGARTIRMA !!!!!
+    const token = "8432443962:AAEAOJ886p6As35xrfLMV7CYuGX254zNaJI";
+    const chat_id = "-1002523939469"; 
     const my_text = `📞 Telefon raqami: +${phone}\n📝 Fikr: ${content}`;
 
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+//  !!!!! BU YERNI O‘ZGARTIRMA !!!!!
     try {
       const res = await fetch(url, {
         method: "POST",

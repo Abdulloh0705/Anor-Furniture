@@ -8,12 +8,16 @@ import { AiOutlineProduct } from 'react-icons/ai';
 import { IoBookOutline } from 'react-icons/io5';
 import { MdContactPhone } from 'react-icons/md';
 import { IoMdCart } from 'react-icons/io';
+import { ImSearch } from 'react-icons/im';
+import { TbMenu2 } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = ({ cartCount }) => {
   const { t, i18n } = useTranslation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [language, setLanguage] = useState('uz');
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // ✅ qo‘shildi
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -43,14 +47,12 @@ const Navbar = ({ cartCount }) => {
     }
   };
 
-
-
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
       if (element) {
-        const yOffset = -100; // navbar balandligini hisobga olish
+        const yOffset = -100;
         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
@@ -61,7 +63,7 @@ const Navbar = ({ cartCount }) => {
     if (location.pathname === '/') {
       const element = document.getElementById('about');
       if (element) {
-        const yOffset = -100; // navbar yoki yuqori bo‘shliq uchun
+        const yOffset = -100;
         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
@@ -69,7 +71,6 @@ const Navbar = ({ cartCount }) => {
       navigate('/#about');
     }
   };
-
 
   useEffect(() => {
     if (location.hash === "#contact") {
@@ -82,7 +83,6 @@ const Navbar = ({ cartCount }) => {
     }
   }, [location]);
 
-
   return (
     <div>
       <div className="nav">
@@ -92,7 +92,9 @@ const Navbar = ({ cartCount }) => {
               <img src="/logo.png" alt="" />
               <span> Anor Furniture</span>
             </a>
-            <ul className="nav__item">
+
+            {/* ✅ mobile menu qo‘shildi */}
+            <ul className={`nav__item ${menuOpen ? 'nav__item--open' : ''}`}>
               <li className="nav__list">
                 <FaHome className='nav__link-icon1' /> <a href='/' className="nav__link">{t('home')}</a>
               </li>
@@ -103,18 +105,7 @@ const Navbar = ({ cartCount }) => {
                 <IoBookOutline className='nav__link-icon3' />
                 <button
                   className="nav__link"
-                  onClick={() => {
-                    if (location.pathname === '/') {
-                      const element = document.getElementById('about');
-                      if (element) {
-                        const yOffset = -40;
-                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                        window.scrollTo({ top: y, behavior: 'smooth' });
-                      }
-                    } else {
-                      navigate('/#about');
-                    }
-                  }}
+                  onClick={goToAbout}
                 >
                   {t('about')}
                 </button>
@@ -123,18 +114,7 @@ const Navbar = ({ cartCount }) => {
                 <MdContactPhone className='nav__link-icon4' />
                 <button
                   className="nav__link"
-                  onClick={() => {
-                    if (location.pathname === '/') {
-                      const element = document.getElementById('contact'); // ❌ avvalgisi xato edi
-                      if (element) {
-                        const yOffset = -200;
-                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                        window.scrollTo({ top: y, behavior: 'smooth' });
-                      }
-                    } else {
-                      navigate('/#contact');
-                    }
-                  }}
+                  onClick={goToContact}
                 >
                   {t('contact')}
                 </button>
@@ -142,10 +122,11 @@ const Navbar = ({ cartCount }) => {
             </ul>
 
             <div className="nav__all-actions">
-
-
-
               <div className="nav__lang-box">
+                <div className="nav__search-box">
+                  <input type="text" />
+                  <ImSearch className='nav__search-svg' />
+                </div>
                 <div className="nav__search-cart">
                   <Link to="/cart" className="cart-link">
                     <IoMdCart className='nav__basket-svg' />
@@ -172,12 +153,15 @@ const Navbar = ({ cartCount }) => {
                     </ul>
                   )}
                 </li>
-
+                <div className="nav__menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+                  {menuOpen ? <IoClose size={30} /> : <TbMenu2 size={30} />}
+                </div>
                 {isLoggedIn ? (
                   <Link to="/profile" className="nav__login-link">{t('profile')}</Link>
                 ) : (
                   <Link to="/login" className="nav__login-link">{t('login')}</Link>
                 )}
+
               </div>
             </div>
           </div>

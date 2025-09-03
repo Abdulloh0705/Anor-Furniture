@@ -67,92 +67,99 @@ const Card = ({ items = [] }) => {
     }
 
     return (
+        // <div className="card">
+        //     <div className="container">
+        //         <div className="card__box">
+        //             <div className="card__essay-infos_box">
+        //                 <h2 className="card__essay-title">
+        //                     To‘lov va yetkazib berish
+        //                 </h2>
+        //                 <div className="card__essay-card__info">
+        //                     <p className="card__essay-card__title">
+        //                         Karta turi
+        //                     </p>
+        //                     <div className="card__essay-card-img__box">
+        //                         <img src="/card_img/visa-img.png" alt="" className="card__essay-card-img1" />
+        //                         <img src="/card_img/uzcard-img.png" alt="" className="card__essay-card-img2" />
+        //                         <img src="/card_img/humo-img.png" alt="" className="card__essay-card-img3" />
+        //                         <img src="/card_img/master-img.png" alt="" className="card__essay-card-img4" />
+        //                     </div>
+        //                 </div>
+
+        //                 <div className="card__number-all__box">
+        //                     <div className="card__number-input-box" style={{ position: "relative" }}>
+        //                         <span>Karta raqami</span>
+        //                         <PatternFormat
+        //                             type="text"
+        //                             format="####-####-####-####"
+        //                             placeholder="0000-0000-0000-0000"
+        //                             value={cardNumber}
+        //                             onChange={handleInput}
+        //                             onValueChange={(values) => setCardNumber(values.value)}
+        //                             required
+        //                             className='input'
+        //                         />
+        //                         {cardType && (
+        //                             <img
+        //                                 src={cardType}
+        //                                 alt="card logo"
+        //                                 style={{
+        //                                     position: "absolute",
+        //                                     left: cardType?.includes("humo")
+        //                                         ? positions.humo
+        //                                         : cardType?.includes("uzcard")
+        //                                             ? positions.uzcard
+        //                                             : positions.default,
+        //                                     top: "47px",
+        //                                     transform: "translateY(-50%)",
+        //                                     width: cardType?.includes("humo") ? widths.humo : widths.default,
+        //                                 }}
+        //                             />
+        //                         )}
+
+        //                     </div>
+
+        //                     <div className="card__m-y-cvv__box">
+        //                         <div className="card__month-year__box">
+        //                             <span>Muddati</span>
+        //                             <input
+        //                                 type="text"
+        //                                 placeholder="MM/YY"
+        //                                 value={expiry}
+        //                                 onChange={handleExpiry}
+        //                                 required
+        //                             />
+        //                         </div>
+        //                         {(cardType?.includes("visa") || cardType?.includes("master")) && (
+        //                             <div className="card__cvv-box">
+        //                                 <span>CVV</span>
+        //                                 <input
+        //                                     type="text"
+        //                                     placeholder="CVV"
+        //                                     value={cvv}
+        //                                     onChange={handleCvv}
+        //                                     required
+        //                                 />
+        //                             </div>
+        //                         )}
+        //                     </div>
+        //                 </div>
+        //                 <div className="card__all-price_th-but-box">
+        //                     <p className="card-all-product-price">
+        //                         <span className='card-span_p-title'>All Product Price</span> <span className='card-span_p-sum'>{totalPrice}  so'm</span>
+        //                     </p>
+        //                     <button className="card__but">
+        //                         To'lovni tasdiqlash
+        //                     </button>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
         <div className="card">
             <div className="container">
                 <div className="card__box">
-                    <div className="card__essay-infos_box">
-                        <h2 className="card__essay-title">
-                            To‘lov va yetkazib berish
-                        </h2>
-                        <div className="card__essay-card__info">
-                            <p className="card__essay-card__title">
-                                Karta turi
-                            </p>
-                            <div className="card__essay-card-img__box">
-                                <img src="/card_img/visa-img.png" alt="" className="card__essay-card-img1" />
-                                <img src="/card_img/uzcard-img.png" alt="" className="card__essay-card-img2" />
-                                <img src="/card_img/humo-img.png" alt="" className="card__essay-card-img3" />
-                                <img src="/card_img/master-img.png" alt="" className="card__essay-card-img4" />
-                            </div>
-                        </div>
-
-                        <div className="card__number-all__box">
-                            <div className="card__number-input-box" style={{ position: "relative" }}>
-                                <span>Karta raqami</span>
-                                <PatternFormat
-                                    type="text"
-                                    format="####-####-####-####"
-                                    placeholder="0000-0000-0000-0000"
-                                    value={cardNumber}
-                                    onChange={handleInput}
-                                    onValueChange={(values) => setCardNumber(values.value)}
-                                    required
-                                    className='input'
-                                />
-                                {cardType && (
-                                    <img
-                                        src={cardType}
-                                        alt="card logo"
-                                        style={{
-                                            position: "absolute",
-                                            left: cardType?.includes("humo")
-                                                ? positions.humo
-                                                : cardType?.includes("uzcard")
-                                                    ? positions.uzcard
-                                                    : positions.default,
-                                            top: "47px",
-                                            transform: "translateY(-50%)",
-                                            width: cardType?.includes("humo") ? widths.humo : widths.default,
-                                        }}
-                                    />
-                                )}
-
-                            </div>
-
-                            <div className="card__m-y-cvv__box">
-                                <div className="card__month-year__box">
-                                    <span>Muddati</span>
-                                    <input
-                                        type="text"
-                                        placeholder="MM/YY"
-                                        value={expiry}
-                                        onChange={handleExpiry}
-                                        required
-                                    />
-                                </div>
-                                {(cardType?.includes("visa") || cardType?.includes("master")) && (
-                                    <div className="card__cvv-box">
-                                        <span>CVV</span>
-                                        <input
-                                            type="text"
-                                            placeholder="CVV"
-                                            value={cvv}
-                                            onChange={handleCvv}
-                                            required
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                        <div className="card__all-price_th-but-box">
-                            <p className="card-all-product-price">
-                                <span className='card-span_p-title'>All Product Price</span> <span className='card-span_p-sum'>{totalPrice}  so'm</span>
-                            </p>
-                            <button className="card__but">
-                                To'lovni tasdiqlash
-                            </button>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

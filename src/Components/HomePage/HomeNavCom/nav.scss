@@ -185,6 +185,29 @@
         }
     }
 
+    &__search-box {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        input {
+            outline: none;
+            border: 1px solid #4c6256 !important;
+            padding: 5px 10px;
+            border-radius: 9px 0px 0px 9px;
+        }
+    }
+
+    &__search-svg {
+        font-size: 28.10px;
+        background-color: #4c6256;
+        border-radius: 0px 6px 6px 0px;
+        padding: 5px;
+        position: absolute;
+        right: -4px;
+        color: #fbf7ed;
+    }
+
     #contact {
         scroll-margin-top: 120px;
         /* Navbar balandligi */
