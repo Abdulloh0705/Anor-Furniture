@@ -1,0 +1,203 @@
+.product-page {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__box {
+        width: 1230px;
+        margin: 0 auto; // ✅ markazga keladi
+        display: flex;
+        justify-content: center;
+        column-gap: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 50px 40px;
+        background-color: #fbf7ed;
+    }
+
+
+    &__img-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__min-box1 {
+        width: 550px;
+        height: 400px;
+    }
+
+    &__img {
+        padding: 78px 27px 78px 23px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #fff;
+    }
+
+    &__min-box2 {
+        display: flex;
+        width: 550px;
+        justify-content: space-evenly;
+    }
+
+    &__imgs {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        background-color: #fff;
+
+        &.active {
+            border: 2px solid #4c6256;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__i-title {
+        font-size: 24px;
+        font-weight: 400;
+        color: #4c6256;
+    }
+
+    &__i-text {
+        color: #000;
+        font-size: 17.6px;
+        width: 360px;
+        font-family: 'Roboto';
+
+    }
+
+    &__i-colors {
+        margin-top: 20px;
+    }
+
+    &__i-color__title {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__i-color-list {
+        display: flex;
+        gap: 13px;
+    }
+
+    &__i-color {
+        width: 50px;
+        height: 35px;
+        border-radius: 9px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &.active {
+            border-color: #000;
+        }
+    }
+
+    &__i-price {
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__i_span1 {
+        padding-left: 10px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &__i_span2 {
+        font-weight: 600;
+        font-size: 22px;
+    }
+
+    &__i-but-counter {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        column-gap: 20px;
+    }
+
+    &__i-counter {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+    }
+
+    &__i-subtraction,
+    &__i-add {
+        background: none;
+        font-size: 28px;
+        border: 2px solid #4c6256;
+        background-color: #fbf7ed;
+        color: #4c6256;
+
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: #4c6256;
+            color: #fbf7ed;
+        }
+    }
+
+    &__i-add {
+        padding: 3px 12px 7px 12px;
+    }
+
+    &__i-subtraction {
+        padding: 3px 15px 7px 15px;
+    }
+
+    &__i-count {
+        font-size: 20px;
+        font-weight: 600;
+        min-width: 30px;
+        color: #4c6256;
+        text-align: center;
+    }
+
+    &__infos-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 34px;
+        height: 400px;
+    }
+
+    &__i-but {
+        color: #fbf7ed;
+        background-color: #4c6256;
+        border-radius: 9px;
+        padding: 10px 25px;
+        font-size: 19px;
+        border: 2px solid transparent; // 🔥 boshida ham border bo‘ladi
+        transition: 0.4s;
+        font-weight: 600;
+
+        &:hover {
+            background: #fbf7ed;
+            color: #4c6256;
+            border-color: #4c6256; // 🔥 faqat rang o‘zgaradi
+        }
+    }
+}

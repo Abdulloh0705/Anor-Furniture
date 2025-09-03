@@ -1,0 +1,219 @@
+.card {
+    // &__box{
+    //     display: flex;
+    //     flex-direction: column ;
+
+    // }
+    &__essay-infos_box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    &__essay-title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 22px;
+        color: #4c6256;
+        text-align: center;
+    }
+
+    &__essay-card__title {
+        font-family: 'Nunito';
+        font-weight: 600;
+        font-style: Medium;
+        font-size: 19px;
+    }
+
+    &__essay-card__info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        padding-left: 10px;
+    }
+
+    &__essay-card-img__box {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        column-gap: 16px;
+    }
+
+    &__essay-card-img1 {
+        width: 80px;
+        height: 55px;
+        background-color: #e9e9e9c0;
+        border-radius: 9px;
+        padding: 4px 5px;
+    }
+
+    &__essay-card-img2 {
+        width: 74px;
+        height: 55px;
+        background-color: rgba(233, 233, 233, 0.75);
+        border-radius: 9px;
+        padding: 10px 4px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+
+        }
+    }
+
+    &__essay-card-img3 {
+        width: 95px;
+        height: 55px;
+        background-color: #e9e9e9c0;
+        border-radius: 9px;
+    }
+
+    &__essay-card-img4 {
+        width: 75px;
+        height: 55px;
+        background-color: #e9e9e9c0;
+        border-radius: 9px;
+    }
+
+}
+
+.card {
+    &__number-all__box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+    }
+
+    &__number-input-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+        padding-left: 7px;
+
+        span {
+            color: #4c6256;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .input {
+            width: 85%;
+            height: 40px;
+            border-radius: 6px;
+            padding-left: 18px;
+            border: none;
+            outline: none;
+            margin-left: 10px;
+
+            border-radius: 6px;
+            padding-left: 50px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__m-y-cvv__box {
+        display: flex;
+        align-items: center;
+        column-gap: 18px;
+    }
+
+    &__month-year__box {
+        display: flex;
+        flex-direction: column;
+        padding-left: 7px;
+        row-gap: 4px;
+
+        span {
+            color: #4c6256;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        input {
+            width: 20%;
+            padding-left: 10px;
+            outline: none;
+            border: 1px solid #ccc;
+            width: 171px;
+            height: 40px;
+            border-radius: 6px;
+            margin-left: 10px;
+        }
+    }
+
+    &__cvv-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+
+        span {
+            color: #4c6256;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        input {
+            padding-left: 18px;
+            width: 171px;
+            height: 40px;
+            border-radius: 6px;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+    }
+
+    &__all-price_th-but-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    &-all-product-price {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        width: 85%;
+
+        .card-span_p-title {
+            color: #4c6256;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .card-span_p-sum {
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+    }
+
+    &__but {
+        width: 90%;
+        background-color: #4c6256;
+        color: #fbf7ed;
+        font-weight: 700;
+        font-size: 17px;
+        padding: 16px 24px;
+        border: 2px solid #4c6256;
+        border-radius: 9px;
+        cursor: pointer;
+        transition: 0.1s;
+
+        &:hover {
+            color: #4c6256;
+            background-color: #fbf7ed;
+            font-weight: 800;
+        }
+    }
+}

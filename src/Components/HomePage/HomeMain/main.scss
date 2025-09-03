@@ -1,0 +1,26 @@
+.main{
+    margin: 60px 0 120px 0 ;
+    &__box2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    &__texte{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    &__title{
+        color: #41584B;
+        font-weight: 600;
+        font-size: 35px;
+    }
+    &__text{
+        color: rgb(77, 77, 77);
+        font-size: 19px;
+        font-weight: 500;
+        font-style: italic;
+    }
+}

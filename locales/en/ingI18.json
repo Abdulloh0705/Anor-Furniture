@@ -1,0 +1,21 @@
+{
+  "home": "Home",
+  "products": "Products",
+  "about": "About Us",
+  "contact": "Contact",
+  "search": "Search...",
+  "profile": "Profile",
+  "login": "Login",
+  "brand": "Anor Furniture",
+  "header": {
+    "title": "Products that inspire your creativity are here",
+    "text": "For each of your works — quality tools and elegant decorations",
+    "btnExplore": "Explore the collection",
+    "btnAllProducts": "View all products"
+  },
+  "productsPage": {
+    "title": "Quality Product Collection",
+    "subtitle": "All the essentials in one place.",
+    "addToCart": "Add to Cart"
+  }
+}

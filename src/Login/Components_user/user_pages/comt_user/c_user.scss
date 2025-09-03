@@ -1,0 +1,163 @@
+.c_user {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        row-gap: 20px;
+
+    }
+
+    &__title {
+        color: #4c6256;
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    &__window-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    &-tel-comd {
+        width: 70%;
+        padding: 15px 0 0 15px;
+        row-gap: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__comend {
+        padding-left: 10px;
+    }
+
+    &__comment {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin-left: 20px;
+        background-color: #fbf7ed;
+        border-radius: 9px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        height: 116px;
+    }
+
+    &__data-del {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    &__date {
+        color: rgb(90, 90, 90);
+        font-size: 13px;
+        padding-right: 7px;
+    }
+
+    &__delete {
+        border: 2px solid red;
+        border-radius: 4px;
+        padding: 5px;
+        width: 100px;
+        background-color: #fbf7ed;
+        color: red;
+        margin-top: 5px;
+        margin-right: 5px;
+        font-weight: 700;
+        font-size: 16px;
+        transition: 0.4s;
+
+        &:hover {
+            color: #fbf7ed;
+            background-color: red;
+        }
+    }
+
+    &__none-comd {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        row-gap: 25px;
+
+        p {
+            font-size: 26px;
+            font-weight: 700;
+            color: #4c6256;
+        }
+    }
+
+    &__none-link {
+        color: #4c6256;
+        font-weight: 700;
+        font-size: 20px;
+        border-radius: 9px;
+        padding: 15px 20px;
+        border: 3px solid #4c6256;
+        background-color: #fbf7ed;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #4c6256;
+            color: #fbf7ed;
+        }
+    }
+}
+
+.c_user {
+    &__see-more {
+        background: none;
+        border: none;
+        color: #4c6256;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
+
+    }
+
+    &__modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; // orqadagilardan ustida turadi
+    }
+
+    &__modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 500px;
+        max-height: 70%;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    &__modal-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    &__modal-text {
+        width: 400px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+}

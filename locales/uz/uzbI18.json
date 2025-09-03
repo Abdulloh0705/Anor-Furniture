@@ -1,0 +1,25 @@
+{
+  "home": "Bosh sahifa",
+  "products": "Mahsulotlar",
+  "about": "Biz haqimizda",
+  "contact": "Aloqa",
+  "search": "Qidiruv...",
+  "profile": "Profil",
+  "login": "Kirish",
+  "brand": "Anor Furniture",
+  "header": {
+    "title": "Ijodingizni ilhomlantiradigan mahsulotlar shu yerda",
+    "text": "Har bir ishingiz uchun — sifatli asboblar va nafis bezaklar",
+    "btnExplore": "To‘plamni ko‘rish",
+    "btnAllProducts": "Barcha mahsulotlarni ko‘rish"
+  },
+  
+  "productsPage": {
+    "title": "Sifatli Mahsulot To‘plami",
+    "subtitle": "Bir joyda barcha kerakli mahsulotlar.",
+    "addToCart": "Savatga"
+  }
+
+
+
+}

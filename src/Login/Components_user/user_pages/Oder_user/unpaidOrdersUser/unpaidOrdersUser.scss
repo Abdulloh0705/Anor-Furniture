@@ -1,0 +1,77 @@
+.unpaid-orders {
+    padding-top: 20px;
+
+    &__box {
+        // margin-top: 40px;
+    }
+
+    &__products {
+        display: flex;
+        flex-direction: column;
+        row-gap: 26px;
+    }
+
+    &__product-box {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fbf7ed;
+        padding: 15px 15px;
+        border-radius: 9px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__product__price-add {
+        display: flex;
+        column-gap: 55px;
+    }
+
+    &__empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        color: #555;
+
+        h3 {
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #777;
+            margin-top: 8px;
+        }
+    }
+
+    &__icon {
+        font-size: 48px;
+        color: #b0b0b0;
+    }
+
+    &__link {
+        color: #4c6256;
+        padding: 10px 20px;
+        border: 2px solid #4c6256;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: 0.3s;
+
+        &:hover {
+            background: #4c6256;
+            color: #f9f9f9;
+        }
+    }
+}

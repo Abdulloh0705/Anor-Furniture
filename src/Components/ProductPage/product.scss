@@ -1,0 +1,164 @@
+    .all {
+        margin-top: 120px;
+        width: 100%;
+
+        &__box {
+            display: flex;
+            column-gap: 5%;
+        }
+
+        &__search_chek-b {
+            width: 20%;
+            height: 87vh;
+            border-right: 1px solid #ccc;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            flex-wrap: wrap;
+
+
+
+            position: fixed;
+            top: 120px;
+            left: 0;
+            height: 100vh;
+            background: #fff;
+            z-index: 10;
+        }
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        width: 74%;
+        row-gap: 130px;
+        margin-left: 28%;
+
+        &__theme {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: flex-end;
+            height: 130px;
+            width: 50%;
+            align-items: center;
+            row-gap: 15px;
+        }
+
+        &__box {
+            display: grid;
+            grid-template-columns: repeat(4, 232px);
+            column-gap: 25px;
+            row-gap: 40px;
+        }
+
+        &__th-title {
+            color: #4c6256;
+            font-weight: 700;
+            font-size: 33px;
+            font-family: system-ui;
+
+        }
+
+        &__th-text {
+            color: #797979;
+            font-size: 17px;
+            font-style: italic;
+        }
+
+        // &__box {
+        &__cards {
+            width: 100%; // grid ustuniga moslashadi
+            max-width: 232px; // lekin undan kattalashmaydi
+            height: 300px;
+            background-color: #fbf7ed;
+            border-radius: 9px;
+            margin: auto; // o‘rtaga joylashadi
+        }
+
+        &__card-link {
+            display: flex;
+            flex-direction: column;
+            height: 87%;
+            justify-content: space-around;
+        }
+
+        &__card-link {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 15px;
+            color: #515151;
+            font-weight: 700;
+        }
+
+        &__essey {
+            row-gap: 15px;
+            display: flex;
+            flex-direction: column;
+            padding-right: 15px;
+        }
+
+        &__but {
+            border: none;
+            width: 100%;
+            height: 14%;
+            border-radius: 0 0 10px 10px;
+            font-size: 17px;
+            cursor: pointer;
+            background-color: #4c6256;
+            color: #fbf7ed;
+        }
+
+        &__action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4c6256;
+            height: 42px;
+            border-radius: 0 0 10px 10px;
+            gap: 8px;
+            padding: 0 10px;
+        }
+
+        &__counter {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            button {
+                width: 28px;
+                height: 28px;
+                border: 1px solid #ccc;
+                background-color: #fbf7ed;
+                color: #4c6256;
+                cursor: pointer;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+
+            span {
+                min-width: 20px;
+                text-align: center;
+                font-weight: 600;
+                color: #fbf7ed;
+            }
+        }
+
+        &__but.small {
+            font-size: 14px;
+            padding: 5px 10px;
+            height: auto;
+            width: 100px;
+            border-radius: 6px;
+            font-weight: 700;
+            background-color: #fbf7ed;
+            color: #4c6256;
+        }
+    }

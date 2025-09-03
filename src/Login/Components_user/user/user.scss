@@ -1,0 +1,45 @@
+.user {
+  margin-top: 200px;
+
+  &__all-box {
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    padding: 14px 24px;
+    width: 332px;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  &__list:hover {
+    background: #e2e8e5;
+  }
+
+  &__list.active {
+    background: #4c6256;
+    color: #fff;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+  &__data-window__box {
+    width: 1016px;
+    height: auto;
+
+  }
+}

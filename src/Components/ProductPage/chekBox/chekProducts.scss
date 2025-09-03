@@ -1,0 +1,115 @@
+.chek {
+  height: 39vh;
+  display: flex;
+  justify-content: center;
+
+  &__all-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+  }
+
+  &__all-title {
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__but {
+    border: none;
+    background: none;
+  }
+
+  &__box-essay {
+    width: 256px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list-item {
+    label {
+      display: flex;
+      align-items: center;
+      column-gap: 7px;
+      cursor: pointer;
+
+      input[type="checkbox"] {
+        display: none; // oddiy checkboxni yashiramiz
+      }
+
+      input[type="checkbox"] + span {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        background: white;
+        position: relative;
+      }
+
+      input[type="checkbox"]:checked + span {
+        background-color: #4c6256;
+      }
+
+      input[type="checkbox"]:checked + span::after {
+        content: "✔";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: #fbf7ed;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+  }
+
+  &__2-box,
+  &__1-box {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+  }
+
+  &__dropdown {
+    padding-left: 7px;
+  }
+}
+
+.color-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #000000b0;
+    margin-right: 8px;
+    position: relative;
+  }
+
+  input:checked + .color-box::after {
+    content: "✔";
+    color: #ffffff;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 2px #000;
+  }
+}

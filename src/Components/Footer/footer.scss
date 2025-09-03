@@ -1,0 +1,159 @@
+.footer {
+  background-color: #4c6256;
+  height: 295px;
+  width: 100%;
+
+  &__all-box {
+    width: 100%;
+    height: 295px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__box {
+    width: 90%;
+
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__logo-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__t-i-l__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  &__i-box {
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__item1-box,
+  &__item2-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__l-title {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fbf7ed;
+  }
+
+  &__l-text {
+    width: 400px;
+    padding-left: 15px;
+    font-weight: 500;
+    color: #fbf7ed;
+    font-family: 'Playfair Display';
+  }
+
+  &__i-l__title {
+    color: #fbf7ed;
+    font-size: 23px;
+    font-weight: 700;
+  }
+
+  &__list {
+    color: #fbf7ed;
+    font-size: 17px;
+  }
+
+  &__ttg-crt__big-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__ttg-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+
+    span,
+    a,
+    p {
+      color: #fbf7ed;
+
+    }
+  }
+
+  &__crt-title {
+    color: #fbf7ed;
+
+  }
+
+  &__crt-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__crt-img-box {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    padding-left: 10px;
+  }
+
+  &__crt-img1 {
+    width: 80px;
+    height: 55px;
+    background-color: #ffffff94;
+    padding: 7px 7px;
+    border-radius: 6px;
+  }
+
+  &__crt-img2 {
+    height: 55px;
+    width: 80px;
+    background-color: #ffffff94;
+    padding: 7px 5px;
+    border-radius: 6px;
+  }
+
+  &__crt-img3 {
+    width: 90px;
+    height: 55px;
+    background-color: #ffffff94;
+    padding: 7px 5px;
+    border-radius: 6px;
+  }
+
+  &__crt-img4 {
+    width: 75px;
+    height: 55px;
+    background-color: #ffffff94;
+    padding: 7px 5px;
+    border-radius: 6px;
+  }
+}
+
+.developer {
+  width: 100%;
+  border-top: 2px solid #7e7e7e;
+  display: flex;
+  column-gap: 10px;
+  height: 40px;
+  align-items: center;
+  p{
+    padding-left: 7px ;
+    color: #b6b6b6;
+  }
+  a{
+    color: #b6b6b6;
+    
+  }
+}

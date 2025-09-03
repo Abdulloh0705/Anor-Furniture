@@ -1,0 +1,224 @@
+.userInfo {
+    width: 85%;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding: 34px;
+        border-radius: 6px;
+        border: 1px solid #4c6256;
+        background-color: #4c6256;
+        height: auto;
+        row-gap: 22px;
+    }
+
+    &__title {
+        color: #fbf7ed;
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    &__all-input__box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 23px;
+        margin-top: 20px;
+    }
+
+    &__userName-box {
+        display: flex;
+        column-gap: 36px;
+    }
+
+    &__Surname-box {
+        display: flex;
+        row-gap: 8px;
+        flex-direction: column;
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fbf7ed;
+        }
+
+        input {
+            padding: 13px 10px 15px 16px;
+            border-radius: 12px;
+            outline: none;
+            border: 1px solid rgb(175, 175, 175);
+            margin-left: 5px;
+        }
+    }
+
+    &__name-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+
+        span {
+            font-size: 14px;
+            color: #fbf7ed;
+            font-weight: 600;
+        }
+
+        input {
+            padding: 13px 10px 15px 16px;
+            border-radius: 12px;
+            outline: none;
+            border: 1px solid rgb(175, 175, 175);
+            margin-left: 5px;
+        }
+    }
+
+    &__h-f-name-box {
+        display: flex;
+        row-gap: 8px;
+        flex-direction: column;
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fbf7ed;
+        }
+
+        input {
+            padding: 13px 10px 15px 16px;
+            border-radius: 12px;
+            outline: none;
+            border: 1px solid rgb(175, 175, 175);
+            margin-left: 5px;
+        }
+    }
+
+    &__phone-gmail__box {
+        display: flex;
+        column-gap: 36px;
+
+    }
+
+    &__gmail-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        position: relative;
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fbf7ed;
+        }
+
+        input {
+            padding: 10px 10px 10px 16px;
+            border-radius: 12px;
+            outline: none;
+            border: 1px solid rgb(175, 175, 175);
+            margin-left: 5px;
+        }
+    }
+
+    &__phone-box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fbf7ed;
+        }
+
+        input {
+            padding: 10px 10px 10px 16px;
+            border-radius: 12px;
+            outline: none;
+            border: 1px solid rgb(175, 175, 175);
+            margin-left: 5px;
+        }
+    }
+
+    &__log-out_save__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin-top: 10px;
+
+    }
+
+    &__log-out {
+        color: #fbf7ed;
+        background-color: #4c6256;
+        outline: none;
+        border: 2px solid #fbf7ed;
+        border-radius: 4px;
+        padding: 10px 30px;
+        font-size: 16px;
+        transition: 0.3s;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fbf7ed;
+            color: #4c6256;
+            border-radius: 15px;
+            border: 2px solid #4c6256;
+            font-weight: 700;
+        }
+    }
+
+
+    .input-error {
+        border: 1px solid #e53935;
+        outline: none;
+        background-color: #fff5f5;
+    }
+
+    .country-name {
+        display: none;
+    }
+
+    .error-message {
+        position: absolute;
+        bottom: -25px;
+        left: 1px;
+        width: 315px !important;
+        color: #e53935;
+    }
+
+    &__cancellation {
+        color: #fbf7ed;
+        font-weight: 700;
+        border: none;
+        border-radius: 6px;
+        padding: 7px 10px;
+        width: 120px;
+        background: none;
+        border: 2px solid;
+    }
+
+    &__save {
+        padding: 7px 10px;
+        border: 2px solid #fbf7ed;
+        border-radius: 6px;
+        color: #4c6256;
+        background-color: #fbf7ed;
+        width: 100px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    &__save-box {
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .form-error-message {
+        color: #e53935;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+}
