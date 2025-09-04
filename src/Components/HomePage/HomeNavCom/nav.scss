@@ -37,6 +37,8 @@
     &__item {
         display: flex;
         column-gap: 35px;
+        width: 959px;
+        justify-content: flex-end;
     }
 
     &__list {

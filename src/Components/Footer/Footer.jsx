@@ -41,7 +41,7 @@ const Footer = () => {
                         <div className="footer__ttg-crt__big-box">
                             <div className="footer__ttg-box">
                                 <span> Admin: <a href="tel:+998 (90) 123-45-67">+998 (90) 123-45-67</a></span>
-                                <p className="footer__ttg-job-t">Dushanba - Yakshanba: 08:00 - 20:00</p>
+                                <p className="footer__ttg-job-t"> Ish vaqti: 24/7 </p>
                             </div>
                             <div className="footer__crt-box">
                                 <p className="footer__crt-title">

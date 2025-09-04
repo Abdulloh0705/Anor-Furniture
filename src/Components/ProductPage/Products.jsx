@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import "./product.scss";
@@ -7,9 +7,23 @@ import ChekProducts from './chekBox/ChekProducts';
 
 const Products = ({ addToCart }) => {
   const { t } = useTranslation();
-
   const navigate = useNavigate();
+
   const [cartCounts, setCartCounts] = useState({});
+  const [hasNavigated, setHasNavigated] = useState(false);
+
+  // 🔑 localStorage dan flagni o‘qish
+  useEffect(() => {
+    const stored = sessionStorage.getItem("hasNavigated");
+    if (stored === "true") {
+      setHasNavigated(true);
+    }
+  }, []);
+
+  // 🔑 flag o‘zgarsa sessionStorage ga yozish
+  useEffect(() => {
+    sessionStorage.setItem("hasNavigated", hasNavigated);
+  }, [hasNavigated]);
 
 
   const handleAdd = (item) => {
@@ -32,12 +46,17 @@ const Products = ({ addToCart }) => {
     });
   };
 
-
   const handleAddToCart = (item) => {
     const count = cartCounts[item.id] || 1;
     addToCart({ ...item, count });
-    navigate('/cart');
+
+    // 🔑 faqat birinchi marta navigate qiladi
+    if (!hasNavigated) {
+      navigate('/cart');
+      setHasNavigated(true);
+    }
   };
+
   return (
     <div className="all">
       <div className="container">

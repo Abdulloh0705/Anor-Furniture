@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './card.scss'
 import { PatternFormat } from 'react-number-format'
+import { IoIosArrowDown } from 'react-icons/io'
 
 const Card = ({ items = [] }) => {
     const [cardNumber, setCardNumber] = useState("")
@@ -67,99 +68,40 @@ const Card = ({ items = [] }) => {
     }
 
     return (
-        // <div className="card">
-        //     <div className="container">
-        //         <div className="card__box">
-        //             <div className="card__essay-infos_box">
-        //                 <h2 className="card__essay-title">
-        //                     To‘lov va yetkazib berish
-        //                 </h2>
-        //                 <div className="card__essay-card__info">
-        //                     <p className="card__essay-card__title">
-        //                         Karta turi
-        //                     </p>
-        //                     <div className="card__essay-card-img__box">
-        //                         <img src="/card_img/visa-img.png" alt="" className="card__essay-card-img1" />
-        //                         <img src="/card_img/uzcard-img.png" alt="" className="card__essay-card-img2" />
-        //                         <img src="/card_img/humo-img.png" alt="" className="card__essay-card-img3" />
-        //                         <img src="/card_img/master-img.png" alt="" className="card__essay-card-img4" />
-        //                     </div>
-        //                 </div>
-
-        //                 <div className="card__number-all__box">
-        //                     <div className="card__number-input-box" style={{ position: "relative" }}>
-        //                         <span>Karta raqami</span>
-        //                         <PatternFormat
-        //                             type="text"
-        //                             format="####-####-####-####"
-        //                             placeholder="0000-0000-0000-0000"
-        //                             value={cardNumber}
-        //                             onChange={handleInput}
-        //                             onValueChange={(values) => setCardNumber(values.value)}
-        //                             required
-        //                             className='input'
-        //                         />
-        //                         {cardType && (
-        //                             <img
-        //                                 src={cardType}
-        //                                 alt="card logo"
-        //                                 style={{
-        //                                     position: "absolute",
-        //                                     left: cardType?.includes("humo")
-        //                                         ? positions.humo
-        //                                         : cardType?.includes("uzcard")
-        //                                             ? positions.uzcard
-        //                                             : positions.default,
-        //                                     top: "47px",
-        //                                     transform: "translateY(-50%)",
-        //                                     width: cardType?.includes("humo") ? widths.humo : widths.default,
-        //                                 }}
-        //                             />
-        //                         )}
-
-        //                     </div>
-
-        //                     <div className="card__m-y-cvv__box">
-        //                         <div className="card__month-year__box">
-        //                             <span>Muddati</span>
-        //                             <input
-        //                                 type="text"
-        //                                 placeholder="MM/YY"
-        //                                 value={expiry}
-        //                                 onChange={handleExpiry}
-        //                                 required
-        //                             />
-        //                         </div>
-        //                         {(cardType?.includes("visa") || cardType?.includes("master")) && (
-        //                             <div className="card__cvv-box">
-        //                                 <span>CVV</span>
-        //                                 <input
-        //                                     type="text"
-        //                                     placeholder="CVV"
-        //                                     value={cvv}
-        //                                     onChange={handleCvv}
-        //                                     required
-        //                                 />
-        //                             </div>
-        //                         )}
-        //                     </div>
-        //                 </div>
-        //                 <div className="card__all-price_th-but-box">
-        //                     <p className="card-all-product-price">
-        //                         <span className='card-span_p-title'>All Product Price</span> <span className='card-span_p-sum'>{totalPrice}  so'm</span>
-        //                     </p>
-        //                     <button className="card__but">
-        //                         To'lovni tasdiqlash
-        //                     </button>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
         <div className="card">
             <div className="container">
                 <div className="card__box">
-                    
+                    <div className="card__essays-all__box">
+                        <div className="card__essays-title">
+                            <h2>OctoBank orqali Anor Furniture to'lovi</h2>
+                        </div>
+                        <div className="card__payment-box">
+                            <div className="card__essay-box 1">
+                                <h3>To‘lov qanday amalga oshiriladi?</h3>
+                                <p>“To'lovni tasdiqlash” tugmasini bosing, karta ma’lumotlarini kiriting va operatsiyani tasdiqlang.</p>
+                            </div>
+                            <div className="card__essay-box 2">
+                                <h3>Xavfsizlik</h3>
+                                <p>To‘lov OctoBank’ning himoyalangan sahifasida amalga oshiriladi. Anor Furniture sizning karta raqamingizni saqlamaydi.</p>
+                            </div>
+                            <div className="card__essay-box 3">
+                                <h3>To‘lov holati</h3>
+                                <p>Muvaffaqiyatli to‘lovdan so‘ng buyurtma holati avtomatik yangilanadi va sizga tasdiq xabari ko‘rsatiladi.</p>
+                            </div>
+                            <div className="card__essay-box 4">
+                                <h3>Qo‘llab-quvvatlash</h3>
+                                <p>Agar to‘lovda muammo yuz bersa, Anor Furniture mijozlarga xizmat ko‘rsatish bo‘limiga murojaat qiling. Buyurtma raqamingizni tayyor tuting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card__all-price_th-but-box">
+                        <p className="card-all-product-price">
+                            <span className='card-span_p-title'>All Product Price</span> <span className='card-span_p-sum'>{totalPrice}  so'm</span>
+                        </p>
+                        <button className="card__but">
+                            To'lovni tasdiqlash
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
