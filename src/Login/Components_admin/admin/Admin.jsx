@@ -1,7 +1,7 @@
 // Admin.jsx
 import React from 'react';
 import './admin.scss'; // faraz qilamiz bu sizning admin UI faylingiz
-import AdminPanel from '../admin_pages/AdminPanel'; // faraz
+import ProductAddDell from '../productAddandDel/ProductAddDell';
 
 const Admin = () => {
   const role = localStorage.getItem('userRole');
@@ -14,7 +14,7 @@ const Admin = () => {
     <div className="admin">
       <div className="container">
         <h2>Admin Panel</h2>
-        <AdminPanel />
+        <ProductAddDell />
       </div>
     </div>
   );
