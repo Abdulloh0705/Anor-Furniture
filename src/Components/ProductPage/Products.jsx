@@ -2,17 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import "./product.scss";
-import product from './ProductBackend/product';
 import ChekProducts from './chekBox/ChekProducts';
+import { getProducts } from './ProductBackend/api'; // 🔑 Mongo API dan olamiz
 
 const Products = ({ addToCart }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  const [products, setProducts] = useState([]);
   const [cartCounts, setCartCounts] = useState({});
   const [hasNavigated, setHasNavigated] = useState(false);
+  const [filters, setFilters] = useState({ categories: [], colors: [] }); // 🔹 filtrlash uchun qo‘shildi
 
-  // 🔑 localStorage dan flagni o‘qish
+  // 🔑 API dan productlarni olish
+  useEffect(() => {
+    getProducts().then(data => setProducts(data));
+  }, []);
+
+  // 🔑 sessionStorage dan flagni o‘qish
   useEffect(() => {
     const stored = sessionStorage.getItem("hasNavigated");
     if (stored === "true") {
@@ -25,32 +32,41 @@ const Products = ({ addToCart }) => {
     sessionStorage.setItem("hasNavigated", hasNavigated);
   }, [hasNavigated]);
 
+  // 🔹 Filtrlash
+  const filteredProducts = products.filter((p) => {
+    const byCategory =
+      filters.categories.length === 0 ||
+      filters.categories.includes(p.category);
+    const byColor =
+      filters.colors.length === 0 ||
+      p.colors?.some((color) => filters.colors.includes(color));
+    return byCategory && byColor;
+  });
 
   const handleAdd = (item) => {
     setCartCounts(prev => ({
       ...prev,
-      [item.id]: (prev[item.id] || 0) + 1
+      [item._id]: (prev[item._id] || 0) + 1
     }));
   };
 
   const handleSubtract = (item) => {
     setCartCounts(prev => {
-      const newCount = (prev[item.id] || 0) - 1;
+      const newCount = (prev[item._id] || 0) - 1;
       const updated = { ...prev };
       if (newCount <= 0) {
-        delete updated[item.id];
+        delete updated[item._id];
       } else {
-        updated[item.id] = newCount;
+        updated[item._id] = newCount;
       }
       return updated;
     });
   };
 
   const handleAddToCart = (item) => {
-    const count = cartCounts[item.id] || 1;
+    const count = cartCounts[item._id] || 1;
     addToCart({ ...item, count });
 
-    // 🔑 faqat birinchi marta navigate qiladi
     if (!hasNavigated) {
       navigate('/cart');
       setHasNavigated(true);
@@ -62,9 +78,9 @@ const Products = ({ addToCart }) => {
       <div className="container">
         <div className="all__box">
           <div className="all__search_chek-b">
-            <ChekProducts />
+            {/* 🔹 setFilters berildi */}
+            <ChekProducts setFilters={setFilters} />
           </div>
-
           <div className='products'>
             <div className="products__theme">
               <h2 className="products__th-title">{t('productsPage.title')}</h2>
@@ -72,32 +88,37 @@ const Products = ({ addToCart }) => {
             </div>
 
             <div className="products__box">
-              {product.map(item => (
-                <div key={item.id} className="products__cards">
+              {filteredProducts.map(item => (
+                <div key={item._id} className="products__cards">
                   <Link
-                    to={`/product/${item.id}`}
+                    to={`/product/${item._id}`}
                     className='products__card-link'
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <div className="products__cards-c">
-                      <img className='products__img' src={item.img} alt={item.title} />
+                      <img
+                        className="products__img"
+                        src={`http://localhost:5000${item.img}`}   // 🔑 to‘liq URL
+                        alt={item.title}
+                      />
+
                     </div>
                     <div className="products__essey">
                       <h2 className='products__title'>{item.title}</h2>
                       <p className='products__price'>
-                        {cartCounts[item.id] && cartCounts[item.id] > 1
-                          ? `${item.price}  | ${item.price * cartCounts[item.id]} so'm`
+                        {cartCounts[item._id] && cartCounts[item._id] > 1
+                          ? `${item.price}  | ${item.price * cartCounts[item._id]} so'm`
                           : `${item.price} so'm`
                         }
                       </p>
                     </div>
                   </Link>
 
-                  {cartCounts[item.id] ? (
+                  {cartCounts[item._id] ? (
                     <div className="products__action">
                       <div className="products__counter">
                         <button onClick={() => handleSubtract(item)}>-</button>
-                        <span>{cartCounts[item.id]}</span>
+                        <span>{cartCounts[item._id]}</span>
                         <button onClick={() => handleAdd(item)}>+</button>
                       </div>
                       <button
@@ -117,6 +138,10 @@ const Products = ({ addToCart }) => {
                   )}
                 </div>
               ))}
+
+              {filteredProducts.length === 0 && (
+                <p className="no-products">❌ Mahsulot topilmadi</p>
+              )}
             </div>
 
           </div>

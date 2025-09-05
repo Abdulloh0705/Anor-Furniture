@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './chekProducts.scss';
 
-const ChekProducts = () => {
+const ChekProducts = ({ setFilters }) => {
   // tanlanganlarni saqlash uchun state
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
@@ -28,28 +28,44 @@ const ChekProducts = () => {
     { code: "#ffff00", name: "Sariq" }
   ];
 
+  const adminColors = [
+    "#ff0000",
+    "#0000ff",
+    "#00ff00",
+    "#ffffff",
+    "#000000",
+    "#ffff00"
+  ];
+
   // kategoriya toggle qilish
   const toggleCategory = (item) => {
-    setSelectedCategories(prev =>
-      prev.includes(item)
-        ? prev.filter(c => c !== item)
-        : [...prev, item]
-    );
+    const updated = selectedCategories.includes(item)
+      ? selectedCategories.filter((c) => c !== item)
+      : [...selectedCategories, item];
+    setSelectedCategories(updated);
+    if (setFilters) {
+      setFilters((prev) => ({ ...prev, categories: updated }));
+    }
   };
 
   // rang toggle qilish
   const toggleColor = (name) => {
-    setSelectedColors(prev =>
-      prev.includes(name)
-        ? prev.filter(c => c !== name)
-        : [...prev, name]
-    );
+    const updated = selectedColors.includes(name)
+      ? selectedColors.filter((c) => c !== name)
+      : [...selectedColors, name];
+    setSelectedColors(updated);
+    if (setFilters) {
+      setFilters((prev) => ({ ...prev, colors: updated }));
+    }
   };
 
   // Tozalash
   const clearFilters = () => {
     setSelectedCategories([]);
     setSelectedColors([]);
+    if (setFilters) {
+      setFilters({ categories: [], colors: [] });
+    }
   };
 
   return (
@@ -66,7 +82,6 @@ const ChekProducts = () => {
             <div className="chek__box-essay">
               <p className="chek__box-title">Mahsulot toifasi</p>
             </div>
-
             <div className="chek__dropdown">
               <ul className="chek__item">
                 {categories.map((item, index) => (
@@ -91,7 +106,6 @@ const ChekProducts = () => {
             <div className="chek__box-essay">
               <p className="chek__box-title">Mahsulot rangi</p>
             </div>
-
             <div className="chek__dropdown">
               <ul className="chek__item">
                 {colors.map((color, index) => (
@@ -107,6 +121,23 @@ const ChekProducts = () => {
                         style={{ backgroundColor: color.code }}
                       ></span>
                       {color.name}
+                    </label>
+                  </li>
+                ))}
+                {/* Admin ranglari */}
+                {adminColors.map((color, index) => (
+                  <li key={index + colors.length} className="chek__list-item">
+                    <label className="color-label">
+                      <input
+                        type="checkbox"
+                        checked={selectedColors.includes(color)}
+                        onChange={() => toggleColor(color)}
+                      />
+                      <span
+                        className="color-box"
+                        style={{ backgroundColor: color }}
+                      ></span>
+                      {color}
                     </label>
                   </li>
                 ))}

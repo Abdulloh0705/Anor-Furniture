@@ -7,6 +7,11 @@ import UserInfo from '../user_pages/userInfo/UserInfo.jsx';
 
 const User = () => {
   const [activeTab, setActiveTab] = useState("orders"); // boshlang‘ich "Buyurtmalarim"
+  const role = localStorage.getItem('userRole');
+
+  if (role !== 'user') {
+    return <p style={{ color: 'red', textAlign: 'center' }}>❌ Sizda user sahifasiga ruxsat yo‘q</p>;
+  }
 
   const renderContent = () => {
     switch (activeTab) {
@@ -15,7 +20,7 @@ const User = () => {
       case "comments":
         return <C_user />;
       case "info":
-        return <UserInfo/>;
+        return <UserInfo />;
       default:
         return <div>Hech narsa tanlanmagan</div>;
     }

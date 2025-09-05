@@ -1,6 +1,6 @@
-// src/Login/Login.jsx
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 import './login.scss';
 
 const Login = () => {
@@ -9,8 +9,9 @@ const Login = () => {
   const [step, setStep] = useState('email'); // "email" -> "code"
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
-  // 1. Kod yuborish
+  // 1️⃣ Kod yuborish
   const handleSendOtp = async (e) => {
     e.preventDefault();
 
@@ -20,9 +21,9 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("http://localhost:5000/api/otp/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
@@ -38,30 +39,26 @@ const Login = () => {
     }
   };
 
-  // 2. Kodni tekshirish
+  // 2️⃣ Kodni tekshirish
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("http://localhost:5000/api/otp/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, code }),
       });
 
       const data = await res.json();
       if (data.ok) {
-        localStorage.setItem('isLoggedIn', 'true');
-
-        if (email === 'abdullohxojiakbarov74@gmail.com') {
-          localStorage.setItem('userRole', 'admin');
+        if (email === 'abdullohxojiakbarov674@gmail.com') {
+          login('admin');
           navigate('/admin');
         } else {
-          localStorage.setItem('userRole', 'user');
+          login('user');
           navigate('/profile');
         }
-
-        window.location.reload();
       } else {
         setError(data.msg || 'Kod noto‘g‘ri.');
       }
@@ -70,7 +67,7 @@ const Login = () => {
     }
   };
 
-  // 🔙 Boshidan boshlash
+  // 🔄 Boshidan boshlash
   const handleReset = () => {
     setEmail('');
     setCode('');
@@ -85,7 +82,6 @@ const Login = () => {
 
         {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
 
-        {/* Step 1: Email */}
         {step === 'email' && (
           <>
             <div className="input-container">
@@ -102,7 +98,6 @@ const Login = () => {
           </>
         )}
 
-        {/* Step 2: Code */}
         {step === 'code' && (
           <>
             <div className="input-container">
@@ -116,7 +111,6 @@ const Login = () => {
             <button className="submit" onClick={handleVerifyOtp}>
               Verify Code
             </button>
-            {/* 🔙 Boshidan boshlash tugma */}
             <button
               type="button"
               className="submit"
